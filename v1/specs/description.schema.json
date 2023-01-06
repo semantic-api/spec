@@ -15,7 +15,14 @@
       ],
       "properties": {
         "type": {
-          "type": "string"
+          "enum": [
+            "array",
+            "boolean",
+            "integer",
+            "number",
+            "object",
+            "string"
+          ]
         },
         "$ref": {
           "type": "string"

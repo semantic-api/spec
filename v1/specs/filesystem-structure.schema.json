@@ -1,0 +1,87 @@
+{
+  "$id": "/filesystem-structure.schema.json",
+  "title": "JSON representation of filesystem structure",
+  "definitions": {
+    "Functions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^(\\w+)@(\\w+).(js|json|ts)"
+      }
+    }
+  },
+  "properties": {
+    "infrastructure": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "enum": [
+              "api-config.js"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "access-control": {
+                "type": "array",
+                "items": {
+                  "enum": [
+                    "roles.json",
+                    "hooks.js"
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "resources": {
+      "type": "object",
+      "properties": {
+        "collections": {
+          "type": "object",
+          "patternProperties": {
+            "^(\\w+)": {
+              "type": "array",
+              "items": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "pattern": "^(\\w+)\\.(model|helper)\\.js"
+                  },
+                  {
+                    "type": "string",
+                    "pattern": "^(\\w+)\\.description\\.json"
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "functions": {
+                        "$ref": "#/definitions/Functions"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "controllables": {
+          "type": "object",
+          "patternProperties": {
+            "^(\\w+)": {
+              "type": "object",
+              "properties": {
+                "functions": {
+                  "$ref": "#/definitions/Functions"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

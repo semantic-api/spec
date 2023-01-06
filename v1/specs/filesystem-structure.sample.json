@@ -1,0 +1,32 @@
+{
+  "infrastructure": [
+    "api-config.js",
+    {
+      "access-control": [
+        "roles.json",
+        "hooks.js"
+      ]
+    }
+  ],
+  "resources": {
+    "collections": {
+      "collection1": [
+        "collection1.description.json",
+        "collection1.model.js",
+        {
+          "functions": [
+            "collection1@get.js",
+            "collection1@getAll.js"
+          ]
+        }
+      ]
+    },
+    "controllables": {
+      "controllable1": {
+        "functions": [
+          "controllable1@test.js"
+        ]
+      }
+    }
+  }
+}
