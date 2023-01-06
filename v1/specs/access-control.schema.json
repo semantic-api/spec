@@ -1,0 +1,47 @@
+{
+  "$id": "/access-control.schema.json",
+  "title": "Access control",
+  "additionalProperties": false,
+  "definitions": {
+    "RoleCapabilities": {
+      "additionalProperties": false,
+      "properties": {
+        "capabilities": {
+          "type": "object",
+          "patternProperties": {
+            "^(\\w+)": {
+              "$ref": "#/definitions/RoleCapabilitiesFunctions"
+            }
+          }
+        }
+      }
+    },
+    "RoleGrantEverything": {
+      "additionalProperties": false,
+      "properties": {
+        "grantEverything": {
+          "type": "boolean"
+        }
+      }
+    },
+    "RoleCapabilitiesFunctions": {
+      "additionalProperties": false,
+      "properties": {
+        "functions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "patternProperties": {
+    "^(\\w+)": {
+      "anyOf": [
+        { "$ref": "#/definitions/RoleCapabilities" },
+        { "$ref": "#/definitions/RoleGrantEverything" }
+      ]
+    }
+  }
+}

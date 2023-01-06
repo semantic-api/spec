@@ -1,0 +1,15 @@
+{
+  "guest": {
+    "capabilities": {
+      "collection1": {
+        "functions": [
+          "get",
+          "getAll"
+        ]
+      }
+    }
+  },
+  "root": {
+    "grantEverything": true
+  }
+}
