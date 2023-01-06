@@ -1,15 +1,20 @@
 {
-  "guest": {
-    "capabilities": {
-      "collection1": {
-        "functions": [
-          "get",
-          "getAll"
-        ]
+  "roles": {
+    "guest": {
+      "capabilities": {
+        "collection1": {
+          "functions": [
+            "get",
+            "getAll"
+          ]
+        },
+        "collection2": {
+          "grantEverything": true
+        }
       }
+    },
+    "root": {
+      "grantEverything": true
     }
-  },
-  "root": {
-    "grantEverything": true
   }
 }

@@ -1,0 +1,6 @@
+check-specs::
+ifeq (, $(shell which check-jsonschema 2>/dev/null))
+	$(error "Please install check-jsonschema package via pip")
+endif
+
+check-jsonschema=check-jsonschema --schemafile $(1) $(2)

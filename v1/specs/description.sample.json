@@ -1,0 +1,14 @@
+{
+  "$id": "collection1",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "options": {
+      "enum": [
+        "option-a",
+        "option-b"
+      ]
+    }
+  }
+}

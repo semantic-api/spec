@@ -1,0 +1,53 @@
+{
+  "$id": "/description.schema.json",
+  "title": "Description object",
+  "additionalProperties": false,
+  "required": [
+    "$id"
+  ],
+  "definitions": {
+    "Property": {
+      "additionalProperties": false,
+      "oneOf": [
+        { "required": ["type"] },
+        { "required": ["$ref"] },
+        { "required": ["enum"] }
+      ],
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "$ref": {
+          "type": "string"
+        },
+        "enum": {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              { "type": "string" },
+              { "type": "number" },
+              { "type": "object" },
+              { "type": "boolean" }
+            ]
+          }
+        },
+        "description": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "properties": {
+    "$id": {
+      "type": "string"
+    },
+    "properties": {
+      "type": "object",
+      "patternProperties": {
+        "^(\\w+)": {
+          "$ref": "#/definitions/Property"
+        }
+      }
+    }
+  }
+}

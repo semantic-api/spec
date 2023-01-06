@@ -1,0 +1,37 @@
+{
+  "$id": "/api-config.schema.json",
+  "title": "API config object",
+  "additionalProperties": false,
+  "properties": {
+    "port": {
+      "type": "number"
+    },
+    "group": {
+      "type": "string"
+    },
+    "allowSignup": {
+      "type": "boolean"
+    },
+    "signupDefaults": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "role": {
+          "type": "string"
+        },
+        "active": {
+          "type": "boolean"
+        }
+      }
+    },
+    "populateUserExtra": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "dynamicCollections": {
+      "type": "boolean"
+    }
+  }
+}
