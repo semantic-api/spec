@@ -1,6 +1,6 @@
 # Semantic API spec
 
-This repository contains the API specs for the Semantic API project. Every folder beginning with "v" (eg.: v1) contains the specs for a released version.
+This repository contains the API specs for the Semantic API project. Every folder beginning with "v" contains the specs for a released version. If you're looking for documentation, please refer to [Semantic API documentation](https://github.com/semantic-api/documentation).
 
 ## Installing dependencies
 ```
