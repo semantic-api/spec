@@ -6,7 +6,7 @@
       "type": "array",
       "items": {
         "type": "string",
-        "pattern": "^(\\w+)@(\\w+).(js|json|ts)"
+        "pattern": "^(\\w+)@(\\w+).js"
       }
     }
   },
@@ -17,7 +17,8 @@
         "anyOf": [
           {
             "enum": [
-              "api-config.js"
+              "api-config.js",
+              "access-control.js"
             ]
           },
           {
